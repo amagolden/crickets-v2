@@ -1,8 +1,11 @@
-import '../../index.css';
+import '../../global.css';
 import QuestionForm from './form';
 import QuestionCard from './question';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { CurrentUser } from "../sample/CurrentUser";
+import { useData } from "@microsoft/teamsfx-react";
+import { TeamsFxContext } from "../Context";
 
 let defaultQuestions = [
   {
@@ -44,12 +47,22 @@ function PollsPage() {
   const [questions, setQuestions] = useState(defaultQuestions);
   const [sortedQuestions, setSortedQuestions] = useState([]);
 
+
+  const { teamsUserCredential } = useContext(TeamsFxContext);
+  const { loading, data, error } = useData(async () => {
+    if (teamsUserCredential) {
+      const userInfo = await teamsUserCredential.getUserInfo();
+      return userInfo;
+    }
+  });
+  const userName = loading || error ? "" : data.displayName;
+
   const handleAddQuestion = (value, isAnon) => {
     setQuestions(
       [...questions, 
       {id: (questions.length + 1), 
         question: value,
-        submitter: 'Angela', 
+        submitter: userName, 
         isAnswered: false, 
         isAnonymous: isAnon, 
         voteCount: 1 

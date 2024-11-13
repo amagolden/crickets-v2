@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Image, TabList, Tab } from "@fluentui/react-components";
 import "./sample/Welcome.css";
+//import "../global.css";
 import { CurrentUser } from "./sample/CurrentUser";
 import { useData } from "@microsoft/teamsfx-react";
 import { TeamsFxContext } from "./Context";

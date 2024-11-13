@@ -1,0 +1,25 @@
+.polls-page {
+    text-align: center;
+    width: 500px;
+    margin: auto;
+  }
+  
+  h3 {
+    padding-top: 20px;
+  }
+  
+  button {
+    border: none;          /* Removes the border */
+    background: none;      /* Removes the background fill */
+    outline: none;         /* Optional: Removes the focus outline */
+    cursor: pointer;       /* Optional: Makes the button act like a clickable element */
+  }
+  
+  .small-text {
+    color: #6c757d; /* Light grey color */
+  }
+  
+  .homepage {
+    width: 200px;
+  }
+  
