@@ -11,8 +11,11 @@
     "@microsoft/teamsfx": "^2.2.0",
     "@microsoft/teamsfx-react": "^3.0.0",
     "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.10.5",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.3.0",
     "react-router-dom": "^6.8.0",
     "react-scripts": "^5.0.1"
   },
